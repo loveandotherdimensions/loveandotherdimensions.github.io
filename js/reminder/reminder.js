@@ -1,6 +1,5 @@
-
-       var player;
-var heartInterval; // Variable para que los corazones no paren
+var player;
+var heartInterval; 
 
 function onYouTubeIframeAPIReady() {
     player = new YT.Player('player', {
