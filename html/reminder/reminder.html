@@ -3,23 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>❤️</title>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
-     <link rel="stylesheet" href="../../css/reminder/reminder.css">
+    <title>Para ti</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/reminder/reminder.css">
 </head>
 <body>
 
-    <h1>Solo pasaba a recordarte que... </h1>
+    <div class="stars-container" id="stars"></div>
 
-    <div class="card">
-        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJidW5hZHV4b2h3dzB4ZXB5bmN3eGJ4eGJ4eGJ4eGJ4eGJ4eGZqayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l4pTdcifPKUYMDRS0/giphy.gif" alt="Regalo">
+    <div class="content-box">
+        <div id="intro">
+            <h1>Hay personas que son hogar,<br>incluso cuando no podemos quedarnos.</h1>
+            <button id="reveal-btn" onclick="startExperience()">Abrir mensaje</button>
+        </div>
+
+        <div id="video-container">
+            <video id="mainVideo" controls>
+                <source src="../../video/reminder/reminder.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <p id="footer-note">Gracias por ser tú.</p>
     </div>
-
-    <button class="btn-play" onclick="toggleMusica()">❤️</button>
-    <p id="instruccion">Toca el corazón para escuchar</p>
-
-    <div id="player"></div>
     <script src="../../js/reminder/reminder.js"></script>
-    <script src="https://www.youtube.com/iframe_api"></script>
 </body>
 </html>
