@@ -1,0 +1,139 @@
+:root {
+            --espresso: #2C1B18;
+            --mocha: #4B3832;
+            --coffee: #6F4E37;
+            --latte: #C0A080;
+            --cream: #F5F1ED;
+        }
+
+        * { box-sizing: border-box; }
+
+        body { 
+            background-color: var(--cream); 
+            font-family: 'Inter', sans-serif; 
+            margin: 0;
+            height: 100vh;
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            color: var(--espresso);
+            overflow: hidden;
+            padding: 10px;
+        }
+
+        header { 
+            margin-bottom: 30px; 
+            text-align: center; 
+        }
+        
+        h2 { 
+            font-size: 1.2rem; 
+            font-weight: 300; 
+            margin: 0; 
+            letter-spacing: 2px; 
+            color: var(--mocha);
+        }
+
+        /* Galería Estilo Polaroid con Filtro Sepia */
+        .galeria { 
+            display: flex; 
+            overflow-x: auto; 
+            gap: 25px; 
+            width: 100vw; 
+            padding: 20px 50px; 
+            scroll-snap-type: x mandatory; 
+            scrollbar-width: none;
+        }
+        .galeria::-webkit-scrollbar { display: none; }
+        
+        .polaroid {
+            flex-shrink: 0;
+            scroll-snap-align: center;
+            background: white;
+            padding: 12px 12px 35px 12px;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+            transform: rotate(calc(var(--r, 0) * 1deg));
+            transition: transform 0.3s ease;
+        }
+
+        .polaroid img { 
+            width: 230px;
+            height: 230px;
+            object-fit: cover; 
+            display: block;
+            /* Estos comandos fuerzan al navegador a mejorar la calidad */
+            image-rendering: auto; 
+            -webkit-font-smoothing: antialiased;
+            transform: translateZ(0); /* Activa la aceleración por hardware */
+            filter: sepia(0.4) contrast(1.1) brightness(0.9);
+        }
+
+        /* Área del Sobre */
+        .area-interactiva {
+            position: relative;
+            width: 100%;
+            height: 180px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            margin-top: 40px;
+        }
+
+        .sobre-container { 
+            position: relative; 
+            width: 170px; 
+            height: 110px; 
+            background: var(--mocha); 
+            border-radius: 0 0 5px 5px; 
+            cursor: pointer; 
+            transition: transform 0.4s ease;
+            z-index: 5;
+        }
+        
+        .sobre-container::after { 
+            content: ''; 
+            position: absolute; 
+            top: -65px; left: 0; 
+            border-left: 85px solid transparent; 
+            border-right: 85px solid transparent; 
+            border-bottom: 65px solid var(--mocha); 
+        }
+        
+        .abierto { transform: translateY(15px); }
+        
+        .mensaje-oculto { 
+            position: absolute; 
+            top: 5px; left: 5px; 
+            width: 160px; 
+            background: #fff; 
+            padding: 15px; 
+            border-radius: 2px; 
+            opacity: 0; 
+            transition: 0.5s; 
+            text-align: center; 
+            color: var(--espresso);
+            z-index: -1; 
+            font-size: 0.8rem;
+            line-height: 1.4;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        .abierto .mensaje-oculto { 
+            opacity: 1; 
+            transform: translateY(-125px); 
+            z-index: 2; 
+        }
+
+        .instruccion-sobre {
+            color: var(--cream);
+            text-align: center;
+            width: 100%;
+            position: absolute;
+            bottom: 10px;
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        .particula { position: fixed; pointer-events: none; z-index: 999; }

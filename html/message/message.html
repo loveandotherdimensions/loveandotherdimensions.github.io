@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>☕</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/message/message.css">
+</head>
+<body>
+
+    <header>
+        <h2>pequeño detalle</h2>
+    </header>
+    
+    <div class="galeria">
+        <div class="polaroid" style="--r: -3"><img src="../../img/message/brand.jpg" alt="1"></div>
+        <div class="polaroid" style="--r: 2"><img src="../../img/message/cafe.jpg" alt="2"></div>
+        <div class="polaroid" style="--r: -1"><img src="../../img/message/books.jpg" alt="3"></div>
+        <div class="polaroid" style="--r: 3"><img src="../../img/message/computer.jpg" alt="4"></div>
+        <div class="polaroid" style="--r: 2"><img src="../../img/message/guita.jpg" alt="5"></div>
+    </div>
+
+    <div class="area-interactiva">
+        <div class="sobre-container" onclick="abrirTodo(this)">
+            <div class="mensaje-oculto">
+                <p><strong>Para ti</strong></p>
+                <p>Eres el mejor café en una tarde de lluvia. Gracias por estar en mi vida.</p>
+            </div>
+            <p class="instruccion-sobre">abre el sobre</p>
+        </div>
+    </div>
+
+    <audio id="musicaFondo" loop>
+        <source src="cancion.mp3" type="audio/mpeg">
+    </audio>
+<script src="../../js/message/message.js"></script>
+</body>
+</html>
